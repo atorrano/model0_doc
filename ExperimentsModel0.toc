@@ -1,0 +1,14 @@
+\select@language {british}
+\contentsline {chapter}{\numberline {1}Model-0 Experiments}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Tunning the planner ( State Reduction And Statistical Significance )}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Divergence And Biomass Prediction}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Finding the limits to Improvement by Biomass Prediction}{7}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Comparing the Rule Based Agent and the MDP Agent}{11}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Experiment 1: Mean Starvation Day Comparison}{11}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Experiment 2: Ten year simulation of Rule Based Agent vs MDP Agent}{20}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Experiment 3: Width Exploration}{22}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Conclusions}{23}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}Future Work}{24}{subsection.1.3.5}
+\contentsline {chapter}{\numberline {A}Reducing States of Search Tree}{31}{appendix.A}
+\contentsline {chapter}{\numberline {B}Divergent Trajectories}{34}{appendix.B}
+\contentsline {chapter}{\numberline {C}UCT pseudo-code}{35}{appendix.C}

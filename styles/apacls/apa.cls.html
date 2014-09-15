@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0051)http://www.ilsp.gr/homepages/protopapas/apacls.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>apa.cls</title>
+</head>
+
+<body>
+
+<h1><a name="top"><tt>apa.cls</tt></a></h1>
+
+<h2><a name="contents">Contents</a></h2>
+
+<ul>
+<li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#intro">Introduction</a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#authver">Author and version</a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#maint">Maintainance and request for help</a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#acks">Acknowledgments</a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#sysreq">System requirements</a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#instr">Instructions for using <tt>apa.cls</tt></a>
+<ul type="none">
+ <li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#titlhead">Title and headers</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#sect">Sectioning</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#enumser">Enumeration and seriation</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#floats">Figures and tables</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#condcomp">Conditional compilation</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#fonts">Fonts</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#bibcit">Bibliography and citations</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#append">Appendices</a>
+ </li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#babel">Non-English documents</a>
+</li></ul>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#comlist">List of <tt>apa.cls</tt> commands</a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#optlist">List of options to <tt>apa.cls</tt></a>
+</li><li><a href="http://www.ilsp.gr/homepages/protopapas/apacls.html#problems">Possible problems</a>
+</li></ul>
+
+<h2><a name="intro">Introduction</a></h2>
+
+<tt>apa.cls</tt> is a document class for typesetting manuscripts with LaTeX 
+according to the rules of the 5th edition (2001) of the 
+<a href="http://www.apastyle.org/">Publication Manual</a> of the 
+<a href="http://www.apa.org/">American Psychological Association</a>.   
+It simplifies writing of the manuscript, taking 
+care of appearance and leaving only the content to the author (in true 
+LaTeX fashion) and it also allows both for manuscript look and journal
+look with a simple option to the class-loading command. <p>
+
+<i>Note:</i>
+<tt>apa.cls</tt> is not in any way connected to or endorsed by 
+the American Psychological Association.</p><p>
+
+An <a href="http://www.ilsp.gr/homepages/protopapas/pdf/Protopapas_1998_Eutupon1.pdf">article</a> (in Greek) about <tt>apa.cls</tt> 
+can be found in the first issue of 
+<a href="http://www.eutypon.gr/eutypon/index.html">Eutupon</a>, the 
+magazine of the 
+<a href="http://www.eutypon.gr/eft/index.html">Greek Tex Friends Group</a>.
+A more recent  
+<a href="http://www.ilsp.gr/homepages/protopapas/pdf/Protopapas_2007_Eutypon.pdf">article in English</a> is also availabe.
+
+</p><p><font color="red">Final update (January 2011): This page is no longer maintained, and neither is apa.cls. There are no plans to update apa.cls to the 6th edition of the APA manual. Efforts by others are underway; if a working release materializes it will probably be announced at the <a href="http://users.uoa.gr/~aprotopapas/CV/apacls.html">alternate apa.cls page</a>.</font>
+
+</p><p>
+<i><b>Warning:</b><a name="warning">
+<tt>apa.cls</tt> has a well defined scope and purpose, and I'm already too busy for it. 
+Please don't request modifications or features that are not related to the
+stated purpose (which is to create manuscripts suitable for submission to APA journals
+and to typeset these same manuscripts in true journal look).  For example, if you
+want the figures in the manuscript text but the rest as in man mode, then you're
+on your own as to how you might modify <tt>apa.cls</tt> (or not) to achieve that. 
+In particular, <b>if you want to write your thesis, <tt>apa.cls</tt> is not for you</b>.  
+Please do not write to me asking for help with this. Use <tt>apacite</tt> for APA-style 
+citations and write your own typesetting code or 
+search for a thesis class suitable for your University.</a></i><a name="warning">
+
+</a></p><h3><a name="warning">Manuscript look (man mode)</a></h3><a name="warning">
+In man mode, <tt>apa.cls</tt> typesets a title page, abstract page, text body, then
+references, appendices, author notes, footnotes, tables, figure captions, and
+figures. All text is double spaced. The title page contains
+the (centered) title, author name, affiliation, short title, and the
+running head (automatically capitalized).  A note may be inserted in
+place of each table and figure in the text.
+The title is printed as a heading at the beginning of the text. <tt>\leftheader</tt> 
+is ignored while the contents of <tt>\note</tt> are printed under the author
+names and affiliations, typically the date of submission. The “Author
+Notes” page contains the contents of <tt>\acknowledgements</tt>.  A footnote
+page is produced if there is at least one footnote in the text.
+
+<h3>Printed journal look (jou mode)</h3>
+In jou mode, <tt>apa.cls</tt> typesets the text in double-sided, double column format, with
+an appropriately centered title, author names, affiliations, note,
+and abstract.  The contents of acknowledgements are printed as
+footnotes in a box at the lower left corner of the first page.
+Journal-like headers can also be produced on the first page.
+Dimensions and overall “look” are modeled after 
+</a><a href="http://www.apa.org/journals/xhp.html">JEP:HPP</a>.  The purpose
+of this format is to produce readable and reasonably condensed output
+for double-sided printing and distribution.
+
+<h3>Regular LaTeX look (doc mode)</h3>
+In doc mode, <tt>apa.cls</tt> typesets the text in single-sided, 
+single-column format, with
+an appropriately centered title, author names, affiliations, note,
+and abstract on the first page. The contents of acknowledgements are
+printed at the bottom of the first page. Section headings and
+enumeration follow the APA guidelines and floats (figures and tables)
+are inserted in the text where they are defined, as in regular LaTeX
+articles.
+The purpose of this format is to provide hardcopies during the
+development of articles that are later going to be submitted (using
+the manuscript format) and distrubuted (using the journal
+format). The advantage over using a regular article class is that all
+the extra definitions are supported and no changes need thus be made
+to the text other than the format parameter.
+
+<h2><a name="authver">Author and version</a></h2>
+
+<tt>apa.cls</tt> is written and maintained by 
+<a href="mailto:protopap@ilsp.gr">Athanassios Protopapas</a>, who currently works at the 
+<a href="http://www.ilsp.gr/">Institute for Language &amp; Speech Processing</a> in Athens, Greece.
+The current version is 1.3.4, released on December 9th, 2008.  It can found
+on <a href="http://www.ctan.org/tex-archive/macros/latex/contrib/other/apa/">CTAN</a>, 
+the LaTeX <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/apa.html">Catalogue</a>, 
+or it may be <a href="http://www.ilsp.gr/homepages/protopapas/dl/apacls.zip">downloaded from here</a>.  There are no more recent 
+“working” versions at this time.
+<p>
+<tt>apa.cls</tt> is distributed under the terms of the 
+<a href="http://www.ctan.org/tex-archive/macros/latex/base/lppl.txt">LaTeX Project Public License</a> 
+(lppl). In short, this means that the software is copyright but you are granted 
+“a license which gives you, the ‘user’ of the software, 
+legal permission to copy, distribute, and/or modify the software. 
+However, if you modify the software and then distribute it (even just 
+locally) you must change the name of the software to avoid confusion” 
+(quoted from <a href="http://www.ctan.org/tex-archive/help/Catalogue/licenses.lppl.html">
+The TeX Catalogue License Definitions</a>). 
+</p><p>
+The history of <tt>apa.cls</tt> revisions can be found in the <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/CHANGELOG.txt"><tt>CHANGELOG</tt></a> file.
+
+
+</p><h2><a name="maint">Maintainance and request for help</a></h2>
+
+There is still a lot of work to be done before <tt>apa.cls</tt> can be considered 
+sufficiently complete.  Unfortunately I don't have much time to devote to 
+it any more, so updates are few and far between.  I am quite ready to hand over the honor
+of maintaining <tt>apa.cls</tt> to someone fresh and willing. If you think <tt>apa.cls</tt> is
+worth some of your time and you would like to contribute to it, be sure 
+to <a href="mailto:protopap@ilsp.gr">let me know</a>.  Alternatively,
+feel free to work on one of the following topics (or something else you think is
+missing or in need of improvement) and send me the result:
+<ul>
+<li>Stop messing with captions and use a standard package such as <tt>caption2</tt> or <tt>ccaption</tt> for all cases
+</li><li>Stop messing with <tt>endfloat</tt> and use <tt>loflot</tt> or other appropriate package for the captions page
+</li><li>Use <tt>fancyhdr</tt> for all headings in all modes
+</li><li>Set entire appendix in smaller font size (including headings)
+</li><li>Follow manual guidelines for table "Note" vs. probabilities (3.70/p. 170)
+</li><li>Turn wide tables sideways automatically
+</li><li>Clean up the font act — remove <tt>rm</tt>/<tt>hrm</tt>/<tt>hsl</tt> etc.
+</li><li>Use the <tt>geometry</tt> package to set margins taking into account paper size (letter, A4)
+</li><li>Add contact information command and field for first page (man mode only)
+</li><li>Confirm need for continuation note at page end required with long tables (5.21/p. 301) and modify accordingly.
+</li></ul>
+<p>
+Although this is a purely “free time” project for me, in general 
+I have tried to be responsive about requests related to <tt>apa.cls</tt> and 
+especially when bugs or other problems are involved.  Do not hesitate
+to <a href="mailto:protopap@ilsp.gr">contact me</a> if you encounter 
+difficulties or unexpected (or unacceptable) behavior when using <tt>apa.cls</tt>
+to prepare manuscripts for submission, after you have searched 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/apacls.txt"><tt>apacls.txt</tt></a> and 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/examples.txt"><tt>examples.txt</tt></a> 
+and failed to find an answer to your problem.   <i>Don't even think about writing
+to me about using <tt>apa.cls</tt> for any purpose other than preparing an APA style 
+manuscript for submission to a journal.</i>
+
+
+</p><h2><a name="acks">Acknowledgments</a></h2>
+
+<tt>apa.cls</tt> was created a long time ago out of stylefile mutations based on 
+<a href="http://www.ctan.org/tex-archive/macros/latex209/contrib/theapa/"><tt>theapa</tt></a> 
+style by Young U. Ryu.  Some of Young Ryu's code still survives in the current
+version, in particular the sectioning and seriation/enumeration commands.
+Many people have contributed to the development of <tt>apa.cls</tt> through bug reports, 
+suggestions and requests for features and improvements, and even some actual code!  
+The name of every contributor is mentioned in the <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/CHANGELOG.txt"><tt>CHANGELOG</tt></a> and
+I am grateful to them all.  
+
+
+<h2><a name="sysreq">System requirements</a></h2>
+
+Other than a running LaTeX2e installation and the 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/apacite.html"><tt>apacite</tt></a> 
+package for APA style citations (<tt>sty</tt> and <tt>bst</tt>), there isn't much you need in order
+to use <tt>apa.cls</tt>.  Required packages for man mode are 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/endfloat.html"><tt>endfloat</tt></a> and 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/endnotes.html"><tt>endnotes</tt></a>.  
+For jou mode there are no required packages, but 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/fancyhdr.html"><tt>fancyhdr</tt></a>, 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/ftnright.html"><tt>ftnright</tt></a>, 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/txfonts.html"><tt>txfonts</tt></a> (or 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/pslatex.html"><tt>pslatex</tt></a>, or 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/times.html"><tt>times</tt></a> and 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/mathptm.html"><tt>mathptm</tt></a>), and 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/flushend.html"><tt>flushend</tt></a> are nice to have 
+(after all, you want your article to really look like published, don't you?).
+
+
+<h2><a name="instr">Instructions for using <tt>apa.cls</tt></a></h2>
+
+<tt>apa.cls</tt> is distributed with two files you must read carefully before trying to use it, 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/apacls.txt"><tt>apacls.txt</tt></a> and 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/examples.txt"><tt>examples.txt</tt></a>.  An online version of those instructions follows. You may also examine <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/apaexample.tex"><tt>apaexample.tex</tt></a> (and the accompanying bibliography file <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/examplebib.bib"><tt>examplebib.bib</tt></a>), which contains a minimal complete sample “article” that can be processed using <tt>apa.cls</tt> to produce an APA-style manuscript.
+<p>
+To use <tt>apa.cls</tt>, include one of the following at the top of your document preamble:</p><p>
+<tt>
+\documentclass[jou]{apa}<br>
+\documentclass[man]{apa}<br>
+\documentclass[doc]{apa}<br>
+</tt>
+</p><p>
+You should not load the <tt>article</tt> class because it is automatically called by <tt>apa.cls</tt>.
+You should also <strong>not</strong> load any of the required or optional packages mentioned above
+using the command <tt>\usepackage</tt> because they are automatically loaded by 
+<tt>apa.cls</tt> in the appropriate order.
+
+
+</p><h3><a name="titlhead">Title and header information</a></h3>
+
+In the preamble of your document, define the basic manuscript information:<p>
+<tt>
+\author{First Author and Second Author}<br>
+\affiliation{Department of Both Authors\\ University}<br>
+</tt>
+</p><p>
+If there is only one author or more than one author but all in the same department, use
+the <tt>\author</tt> command as in the above example, with all names in its argument; and use the <tt>\affiliation</tt> command for the department. 
+If there are people from two different departments, use the <tt>\twoauthors</tt>
+and <tt>\twoaffiliations</tt> commands to group them appropriately:</p><p>
+<tt>
+\twoauthors{First Author(s)}{Second Author(s)}<br>
+\twoaffiliations{Affiliation of 1st Author(s)}{Affiliation of 2nd Author(s)}<br>
+</tt>
+</p><p>
+For three affiliations use <tt>\threeauthors</tt> and <tt>\threeaffiliations</tt>, 
+and for four affiliations there's <tt>\fourauthors</tt> and <tt>\fouraffiliations</tt>. Five and six affiliations (and corresponding authors or author groups) are similarly supported (<tt>\fiveauthors</tt> and so on).  If there
+are more than six departments involved you're out of luck with <tt>apa.cls</tt> and I doubt they would fit on the title page anyways.
+</p><p>
+In addition to authors and their affiliations, you should also define the following:</p><p>
+<tt>
+\abstract{Text of your abstract...}<br>
+\acknowledgements{Author notes, acknowledgements, contact information...}<br>
+\rightheader{Running head for journal look}<br>
+\shorttitle{Short title for manuscript header}<br>
+\leftheader{Left head for journal look}<br>
+</tt>
+</p><p>
+These fields are not technically necessary for the document to pass through LaTeX, though they
+are obligatory for any real APA-style manuscript. If you don't define a right header 
+or short title, they default to the title; if you don't define a left header, it 
+defaults to the author name(s).</p><p>
+
+You may also define a note if you want:</p><p>
+<tt>
+\note{Date of current draft; or status; or additional address information...}<br>
+</tt>
+</p><p>
+If you really want your document to have the journal look, you should also define
+the fields for the first page header, which in the journals hold
+reference and copyright information.  In <tt>apa.cls</tt> there are:</p><p>
+<tt>
+\journal{Journal name}<br>
+\volume{Volume, number, pages}<br>
+\ccoppy{Copyright notice}<br>
+\copnum{Serial number or other reference}<br>
+</tt>
+</p><p>
+The content of these definitions is ignored in man mode (manuscript look), 
+of course.
+</p><p>
+After these definitions in the preamble, you begin your manuscript in the
+regular LaTeX way and invoke the command to make the title page:</p><p>
+<tt>
+\begin{document}<br>
+\maketitle<br>
+</tt>
+</p><p>
+Do not leave a blank line between these two commands.  Also, do 
+<strong>not</strong> leave a blank line between <tt>\maketitle</tt> 
+and the beginning of your (introduction) text, either.  This is 
+important for the correct typesetting of the first manuscript page.
+
+
+</p><h3><a name="sect">Sectioning</a></h3>
+
+The default sectioning for <tt>apa.cls</tt> maps the standard LaTeX sectioning
+commands <tt>\section</tt>, <tt>\subsection</tt>, and <tt>\subsubsection</tt> to
+the three-level heading definitions of the APA manual.  See 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/examples.txt"><tt>examples.txt</tt></a> for usage examples.<p>
+
+If you need 
+more or fewer heading levels, you can use the command <tt>\headinglevels{four}</tt> 
+(or any number between one and five—spelled out—instead of four) 
+and then use <tt>\paragraph</tt> and <tt>\subparagraph</tt> for the lower-level 
+sectioning.  
+
+Actually, if you need fewer than three levels you don't really need to do anything
+other than use only <tt>\section</tt> and <tt>\subsection</tt>, but if you do 
+invoke the <tt>\headinglevels</tt> command, then the appearance of the manuscript
+will strictly conform to the APA guidelines for the fewer levels.
+</p><p>
+<i>Note:</i> Don't bother to <tt>\label</tt> your sections; since they are not 
+numbered according to APA style, they cannot be referenced elsewhere in the document
+using <tt>\ref</tt>, so there is no point in labeling them.
+
+
+</p><h3><a name="enumser">Enumeration and seriation</a></h3>
+
+See file <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/apaenum.txt"><tt>apaenum.txt</tt></a> in the 
+<tt>apa.cls</tt> distribution.  Enumeration and seriation are taken without
+modification from Young U. Ryu's code.  In short, there are three kinds
+of environments, called <tt>seriate</tt>, <tt>enumerate</tt>, and 
+<tt>itemize</tt>. They are used in the same way the standard LaTeX environments
+<tt>enumerate</tt> and <tt>itemize</tt> are used, but produce output according 
+to the APA style.  The <tt>seriate</tt>
+environment is used for inline enumeration, when you want to say, for example 
+(a) one thing, (b) another thing, and (c) maybe a third thing, all in APA style.
+
+
+<h3><a name="floats">Float placement, loading, and content</a></h3>
+
+Floats, that is, figures and tables, are used in the regular LaTeX way, 
+through the <tt>figure</tt> and <tt>table</tt> environments, respectively.
+You can use the <tt>t</tt> and <tt>b</tt> options for selectively putting 
+a float at the top or bottom of a page.  Always include <tt>p</tt> after 
+<tt>t</tt> or <tt>b</tt> so that you won't risk
+running out of space if a float is too big.  The <tt>h</tt> option for
+in-text figures is not recommended because it's not used in APA journals.  
+<p>
+Remember to use <tt>\label</tt> for floats <strong>after</strong> the caption 
+(and not inside it!)
+
+</p><h4>Images</h4>
+I assume that in figures we most often want to include an image for some graph
+or other kind of picture which is stored in a separate image file of
+the right kind (<tt>eps</tt> if we use <tt>latex</tt> with <tt>dvips</tt>, 
+<tt>pdf</tt> if we use <tt>pdflatex</tt> or <tt>latex</tt> with <tt>dvipdfm</tt>).
+<p>
+An image can be included in any way you like, but <tt>apa.cls</tt> provides
+a way to deal automatically with fitting encapsulated postscript (EPS)
+files without worrying about dimensions or mode.  Just use the command 
+<tt>\fitfigure</tt> instead of <tt>\includegraphics</tt>.
+For example, if you want to include a graph from file <tt>graph1.eps</tt>, the 
+simplest (and recommended) way is:</p><p>
+<tt>
+\begin{figure}[tp]<br>
+\fitfigure{graph1}<br>
+\caption{This is the caption of the figure.}<br>
+\label{fig:fig1}<br>
+\end{figure}<br>
+</tt></p><p>
+You may include the image file extension (<tt>.eps</tt> in this case) 
+in the <tt>\fitfigure</tt> or <tt>\includegraphics</tt> command, 
+but if you omit it (as in the example), then if you happen to use <tt>pdflatex</tt> it
+will automatically load the corresponding <tt>.pdf</tt> graphic file (assuming
+you have made one with <tt>eps2pdf</tt>), while <tt>dvips</tt> will load the
+<tt>.eps</tt> file.  In short, you don't need the extension, and leaving it out
+may make your life easier.
+</p><p>
+In case of a bitmap eps (as opposed to a graph or line drawing), you
+probably don't want it scaled in man mode, for best reproduction, so
+use <tt>\fitbitmap</tt> instead.
+</p><p>
+<i>Note:</i> If you want to include images in your manuscript, don't forget the command
+<tt>\usepackage{graphicx}</tt> in your preamble!  You should 
+<strong>not</strong> use
+<tt>epsfig</tt> or <tt>graphics</tt> instead of <tt>graphicx</tt>.
+
+</p><h4>Tables</h4>
+
+Tables are stretched to occupy the corresponding text width and are placed with 
+appropriate typefaces etc., but it is your responsibility to format the 
+tabular environments  
+in accordance with the APA guidelines (e.g., no vertical lines, and so on).
+You should always <strong>precede</strong> the actual table body with its 
+caption (i.e., use <tt>\caption</tt> before <tt>\begin{tabular}</tt>) 
+or the results won't be conforming to the APA requirements for tables. <p>
+</p><p>
+To match the APA-journal look you can use <tt>\thickline</tt> (instead of 
+<tt>\hline</tt>) for the top separator (right after starting the <tt>tabular</tt>
+environment).
+</p><p>
+Because a paragraph break is inserted in manuscript mode (optionally with an 
+“insert table/figure” note), don't define tables in the middle of a
+paragraph.
+
+</p><h4>Wide (two-column) tables and figures</h4>
+When an image or table is too wide for a single column, use a double-column
+float, noted with an asterisk after the float environment designation (see
+the LaTeX book). For a wide (two-column) figure, use <tt>\begin{figure*}</tt> 
+and <tt>\end{figure*}</tt>, instead of beginning and ending <tt>{figure}</tt>.
+For a two-column table, similary, begin and end a <tt>table*</tt> environment. 
+<p>
+When using double column figures, it looks better in <tt>jou</tt> mode 
+if you use <tt>\centeredcaption</tt> instead of caption, with the first parameter 
+about equal to the width of the float (table or figure). This makes no difference in
+<tt>man</tt> mode.
+</p><p>
+If your table is too wide to fit upright on a manuscript page, load the <tt>rotating</tt> 
+package and use a <tt>sidewaystable</tt> environment (instead of <tt>table</tt>). You 
+need the special configuration file 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/endfloat.cfg"><tt>endfloat.cfg</tt></a>, supplied with <tt>apa.cls</tt>, 
+for this to work. 
+
+</p><h4>Long tables</h4>
+
+By popular demand, 
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/longtable.html"><tt>longtable</tt></a> now (sort of) works with
+<tt>apa.cls</tt>.  You must <strong>not</strong> load the <tt>longtable</tt> 
+package yourself, due to precedence requirements for proper endfloat 
+function and cross-definitions. Instead, pass the <tt>longtable</tt> 
+option to <tt>apa.cls</tt>.  See the 
+<a href="http://www.cmis.csiro.au/Graham.Williams/TeX/docs/longtable.pdf"><tt>longtable</tt> documentation</a> or 
+the <a href="http://www.awprofessional.com/catalog/product.asp?product_id={32316FC4-94F5-4616-815D-F8691C44BC2B}">LaTeX Companion</a> for instructions on using <tt>longtable</tt>.
+<p>
+Since <tt>longtable</tt> only works in single-column documents it can only be
+used with <tt>man</tt> mode.  Unfortunately the conditional compilation 
+(<tt>ifapamode</tt>) commands won't work
+to keep a single table body and apply a mode-specific (<tt>table</tt> or
+<tt>longtable</tt>) environment because of illegal cross-nesting with
+environment begin/end.  In fact the table environment won't even work
+inside in <tt>ifapamode</tt> argument, which makes it impossible to have a
+single file that can be processed for both <tt>man</tt> and <tt>jou</tt>.  This defeats
+ the purpose of <tt>apa.cls</tt>, so only resort to <tt>longtable</tt> if you absolutely
+ have to.  
+You will need the supplied <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/endfloat.cfg"><tt>endfloat.cfg</tt></a> to use it.
+</p><p>
+A simpler, less clean solution for long tables (not using any specialized package) is   
+shown on page 47 of an <a href="http://www.ilsp.gr/homepages/protopapas/pdf/Protopapas_2007_Eutypon.pdf">article</a> about <tt>apa.cls</tt>.
+
+
+</p><h4>Notes in tables</h4>
+There is a simple way to include notes in
+tables such as, for example, to indicate levels of significance.  The
+command <tt>\tabfnm{X}</tt> inside a table cell (tabular environment) produces
+the note mark.  Use <tt>\tabfnt{X}{Note text}</tt> immediately before or after
+<tt>\end{tabular}</tt> inside the table environment to produce the note text.
+ See <a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/examples.txt"><tt>examples.txt</tt></a>.  It is not possible
+to number the notes automatically, but since it is frequently necessary to refer
+to the same note repeatedly within a table (e.g., for a level of significance), 
+automatic numbering would create more problems than it would solve.
+
+
+<h3><a name="condcomp">Conditional compilation</a></h3>
+
+You can have some text appear differently in each mode, or only appear
+in some mode(s).  You can also modify the appearance of tables,
+figures, or equations between modes of compilation.  Here's an
+unexciting example:<p>
+<tt>
+\ifapamodeman{This is printed in man mode only}{This is not man mode}
+</tt></p><p>
+You can also use the three-way switch:</p><p>
+<tt>The current mode is \ifapamode{man}{jou}{doc}</tt>
+
+
+</p><h3><a name="fonts">Document typefaces</a></h3>
+
+The journal format (<tt>jou</tt> mode) uses Times Roman by default (it does look like
+published after all).  If you don't have <tt>txfonts.sty</tt> or <tt>pslatex.sty</tt> or <tt>times.sty</tt>, or
+if you just prefer computer modern fonts, add <tt>notimes</tt> after the <tt>jou</tt> option
+in the class line: <tt>\documentclass[jou,notimes]{apa}</tt> (<tt>notimes</tt> has no
+effect in modes other than <tt>jou</tt> and may be left in when switching).<p>
+
+The manuscript format (<tt>man</tt> mode) uses Computer Modern by default but can use
+Helvetica or typewriter look by using the options <tt>helv</tt> or <tt>tt</tt>,
+respectively. I find the result with either of these much more
+“manuscript”-like looking, especially using <tt>tt</tt>
+(<tt>\documentclass[man,tt]{apa}</tt>), but that's a matter of taste.  
+These options have no effect in modes other than <tt>man</tt> 
+and may be left in when switching.</p><p>
+
+In the document format (<tt>doc</tt> mode), Computer Modern are used be default
+and should probably be used all the time since, after all, this is supposed to
+be the most “regular” LaTeX-like format.
+
+
+</p><h3><a name="bibcit">Bibliography and citations</a></h3>
+
+By default, <tt>apa.cls</tt> uses the 
+<a href="http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/"><tt>apacite</tt></a> 
+package by Erik Meijer for citations which offers complete coverage and excellent conformance
+to APA guidelines, including <tt>apacite</tt> handling of electronic sources 
+and non-English language forms. 
+
+You should count on using <tt>bibTeX</tt> with the corresponding 
+<a href="http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/apacite.bst"><tt>apacite.bst</tt></a> 
+style file for your bibliography.  Citation commands include the standard <tt>bibtex</tt> 
+options such as <tt>\cite</tt> but there are substantial extensions to cover other needs
+such as contracted <i>vs.</i> full author lists, author name only or year only for complex
+constructions, text preceding or following reference list in parentheses etc.  
+For instructions on using the various citation forms and output examples get 
+<a href="http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/apacite.tex"><tt>apacite.tex</tt></a>,
+<a href="http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/testAPA.tex"><tt>testAPA.tex</tt></a>, and 
+<a href="http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/readme.apa"><tt>readme.apa</tt></a> 
+from the CTAN mirror near you.  
+<p>
+At the end of your document, before any appendices, issue the <tt>\bibliography</tt>
+command with the file names of the relevant <tt>bib</tt> files (standard <tt>bibtex</tt> usage).  Do not use a 
+<tt>\bibliographystyle</tt> command, because <tt>apacite</tt> 
+is selected and loaded automatically (however, for backwards compatibility, 
+any existing <tt>\bibliographystyle</tt> command is nicely ignored with a warning).
+</p><p>
+<b><i>BibLaTeX update:</i></b> As of version 1.3.4, <tt>apa.cls</tt> can also be used with <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/biblatex.html">BibLaTeX</a> (with the <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/biblatex-apa.html">biblatex-apa</a> style by Philip Kime). 
+Use the <tt>noapacite</tt> option to <tt>apa.cls</tt> to prevent it from
+automatically loading <tt>apacite</tt>. You can then load <tt>biblatex</tt> as
+usual and use the biblatex-apa package for citations and references. See
+the <a href="http://www.ctan.org/tex-archive/macros/latex/exptl/biblatex/doc/biblatex.pdf">biblatex documentation</a> and <a href="http://www.ctan.org/tex-archive/macros/latex/exptl/biblatex-contrib/biblatex-apa/biblatex-apa.pdf">biblatex-apa documentation</a>.
+
+</p><h3><a name="append">Appendices</a></h3>
+
+
+The appendix part comes last, that is, after the references section.
+Consistent with standard LaTeX usage, the command <tt>\appendix</tt> is used once, 
+at the point where your (first) appendix starts, to signal the change from
+regular matter to appendix matter.  From that point on, regular sectioning
+commands refer to appendix sections.  In particular, each use of the <tt>\section</tt> 
+command starts a new appendix.  Use, for example<p>
+<tt>
+\section{Appendix Title}<br>
+</tt></p><p>
+to start an appendix (even if there is only one).  Each appendix has its title,
+while numbering (“Appendix A,” “Appendix B” etc.) is
+taken care of automatically in case there are more than one appendices.
+</p><p>
+You are free to
+use figures and tables in the usual way in the appendix(es).  <tt>apa.cls</tt> 
+will number them correctly and include them in the table and figure lists where they
+belong.  
+</p><p>
+You may use
+cross-references to appendixes, because they are numbered, if there
+are more than one.  A command such as <tt>\label{app:xxx}</tt> after the appendix
+<tt>\section</tt> sets the label.  Then you may refer to this appendix with </p><p>
+<tt>Appendix~\ref{app:xxx}</tt></p><p>
+from anywhere in your manuscript.
+
+
+</p><h3><a name="babel">Non-English documents</a></h3>
+
+As of 2005, <tt>apa.cls</tt> and <tt>apacite</tt> can handle non-English documents with <tt>babel</tt>.  Because there are potential conflicts between <tt>apacite</tt> and <tt>babel</tt>, you may not load <tt>babel</tt> from your document, but must pass it as an option to <tt>apa.cls</tt>, so that it can be loaded in the appropriate order and handled correctly. Desired languages are listed as additional options to <tt>apa.cls</tt>, and will be passed on to <tt>babel</tt> automatically when loaded. Remember that the main language of your document is the one listed <i>last</i>. For example, if your article is written in Dutch, use
+<pre>\documentclass[man,babel,english,dutch]{apa}
+</pre>
+If, however, your article is in English but you need support for Greek, for example to cite certain passages using <tt>\textgreek</tt>, then use
+<pre>\documentclass[man,babel,greek,english]{apa}
+</pre>
+instead.
+<p>
+<tt>apa.cls</tt> produces certain strings in the manuscript, mostly as titles to obligatory sections (pages): “Running head,” “Author note,” “Figure captions,” and “Footnotes” (other strings, such as “Abstract,” “References,” and the float labels “Table” and “Figure” are handled by <tt>babel</tt> and/or <tt>apacite</tt>).  These strings are defined in external files, so new ones can easily be added. These files are named with the language name (as known by <tt>babel</tt>) and the extension <tt>.apa</tt> (for example, <tt>greek.apa</tt>).  If the definitions for your languages are not supplied with <tt>apa.cls</tt>, copy <tt>english.apa</tt> with the new file name for your language, and edit the macro definitions inside the new file to display the correct strings in the new language.  Send me the new file so it can be included with future distributions of <tt>apa.cls</tt>.
+
+</p><h3><a name="misc">Miscellaneous</a></h3>
+
+
+If you use vectors, the command \apavector{X} will make your life easier.
+<p>
+If you need to use additional options for <tt>article.cls</tt>, list them as <tt>apa.cls</tt> options and they will be automatically passed along to
+<tt>article.cls</tt>.
+
+
+</p><h2><a name="comlist">List of <tt>apa.cls</tt> commands</a></h2>
+
+In the following alphabetical list of commands you can see the number
+and kind of parameters needed for the use of each one:<p>
+</p><pre> \abstract{Abstract text}                    
+ \acknowledgements{Author notes etc.}   
+ \affiliation{Department\\ University}  
+   \twoaffiliations{Affiliation of 1st Author(s)}{Affil. of 2nd Author(s)}
+   \threeaffiliations{...}{...}{...}
+   \fouraffiliations{...}{...}{...}{...}
+   \fiveaffiliations{...}{...}{...}{...}{...}
+   \sixaffiliations{...}{...}{...}{...}{...}{...}
+ \apamatrix{M}
+ \apavector{A}
+ \appendix
+ \author{Author Name(s)}                
+   \twoauthors{First Author(s)}{Second Author(s)}
+   \threeauthors{...}{...}{...}
+   \fourauthors{...}{...}{...}{...}
+   \fiveauthors{...}{...}{...}{...}{...}
+   \sixauthors{...}{...}{...}{...}{...}{...}
+ \ccoppy{Copyright notice}
+ \centeredcaption{width}{caption-text}
+ \copnum{Serial number}
+ \fitbitmap[optional-height]{eps-filename}
+ \fitfigure[optional-height]{eps-filename}
+ \ifapamode{man-code}{jou-code}{doc-code}
+ \ifapamodeman{man-mode-code}{doc-or-jou-code}
+ \ifapamodejou{jou-mode-code}{doc-or-man-code}
+ \ifapamodedoc{doc-mode-code}{man-or-jou-code}
+ \leftheader{Author name list}
+ \journal{Journal name}
+ \maketitle
+ \note{Draft/submission date, etc.}
+ \rightheader{Running head}
+ \shorttitle{Short title}
+ \tabfnm{a}
+ \tabfnt{a}{Note text}
+ \thickline
+ \title{Title}                          
+ \volume{Volume, number, pages}
+</pre>
+
+
+<h2><a name="optlist">List of options to <tt>apa.cls</tt></a></h2>
+
+<dl>
+<dt><tt>babel</tt>
+  </dt><dd>Loads <tt>babel</tt> to support hyphenation and features for languages other
+             than English.  Desired languages should be listed as additional options
+             after <tt>babel</tt>. 
+</dd><dt><tt>fignum</tt> 
+  </dt><dd>Effective in <tt>man</tt> mode, adds figure numbering to the figure pages.
+             Makes it easier to refer to figures and I recommend it for the
+             reviewers' copies, but for the original figures you need to have
+             them printed without this and write the number with pencil on the back.
+</dd><dt><tt>floatmark</tt>
+  </dt><dd>Effective in <tt>man</tt> mode, inserts placeholders for floats in text
+             (“Insert Figure X about here” – no longer required by APA)
+</dd><dt><tt>helv</tt>
+  </dt><dd>Effective in <tt>man</tt> mode, uses Helvetica as the base typeface
+</dd><dt><tt>longtable</tt>
+  </dt><dd>Only usable in <tt>man</tt> mode, loads <tt>longtable.sty</tt> if 
+    you <em>really</em> must use long tables in your manuscript.  
+</dd><dt><tt>noapacite</tt>
+  </dt><dd>Prevents loading of <tt>apacite</tt> to allow use of BibLaTeX with the biblatex-apa 
+  style for citations and references. See the biblatex and biblatex-apa documentation.
+</dd><dt><tt>nobf</tt>
+  </dt><dd>Effective in <tt>man</tt> mode, turns off boldface in section headers for strict 
+      conformance to APA style.
+</dd><dt><tt>nosf</tt> 
+  </dt><dd>Effective in <tt>man</tt> mode, neutralizes the <tt>\helvetica</tt> command. <em>This is
+      only included for backwards compatibility and should not be used any more since
+      the <tt>\helvetica</tt> command is not supported now.</em>
+</dd><dt><tt>notab</tt>
+  </dt><dd>Effective in <tt>jou</tt> mode, cancels the automatic stretching of tabular
+             environments to the width of their enclosing float.
+</dd><dt><tt>notimes</tt>
+  </dt><dd>Effective in <tt>jou</tt> mode, cancels loading <tt>pslatex</tt> (or <tt>times</tt>) and 
+             uses computer modern fonts.
+</dd><dt><tt>notxfonts</tt>
+  </dt><dd>Effective in <tt>jou</tt> mode, ignores search for <tt>txfonts</tt> and tries to load
+             <tt>pslatex</tt> (or <tt>times</tt>) in order to typeset with Times Roman.
+</dd><dt><tt>tt</tt>
+  </dt><dd>Effective in <tt>man</tt> mode, uses a typewriter base typeface
+</dd></dl>
+
+<i>Note:</i> Options may be left in the <tt>\documentclass</tt> line when compiling
+any mode, since they are quietly ignored when they are not effective.<p>
+
+
+</p><h2><a name="problems">Possible problems</a></h2>
+
+
+If you follow the instructions you shouldn't really have any problems.
+In terms of restrictions, you should keep in mind that only up to six
+affiliations (for article author(s)) are supported, and that there is no 
+provision for A4 paper dimensions (but see 
+<a href="http://www.ilsp.gr/homepages/protopapas/dl/apa/examples.txt"><tt>examples.txt</tt></a> for a workaround).<p>
+
+</p><center><i>Last updated on December 9<sup>th</sup>, 2008<br>by 
+<a href="mailto:protopap@ilsp.gr">Athanassios Protopapas</a></i></center><a href="mailto:protopap@ilsp.gr">
+
+
+
+
+</a></body></html>
